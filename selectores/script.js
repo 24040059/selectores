@@ -1,26 +1,45 @@
-// SELECTORES
-const titulo = document.querySelector("#titulo");
-const botonColor = document.querySelector("#botonColor");
-const botonSaludo = document.querySelector("#botonSaludo");
-const nombreInput = document.querySelector("#nombreInput");
-const saludo = document.querySelector("#saludo");
+// --- SELECTORES ---
+const btnSelector = document.querySelector('#btnSelector');
+const textoSelector = document.querySelector('#textoSelector');
 
-// EVENTOS Y FUNCIONES
-botonColor.addEventListener("click", cambiarColor);
-botonSaludo.addEventListener("click", mostrarSaludo);
+btnSelector.addEventListener('click', () => {
+  textoSelector.style.color = 'purple';
+  textoSelector.textContent = '¡Texto y color cambiados con un selector!';
+});
 
-function cambiarColor() {
-  // Cambia el color del título al azar
-  const colores = ["red", "blue", "green", "purple", "orange"];
-  const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
-  titulo.style.color = colorAleatorio;
+// --- EVENTOS ---
+const btnEvento = document.querySelector('#btnEvento');
+const mensajeEvento = document.querySelector('#mensajeEvento');
+const cuadroEvento = document.querySelector('#cuadro-eventos');
+
+btnEvento.addEventListener('click', () => {
+  mensajeEvento.textContent = '¡Evento click activado!';
+  mensajeEvento.style.color = 'green';
+});
+
+cuadroEvento.addEventListener('mouseover', () => {
+  mensajeEvento.textContent = '¡Evento mouseover activado!';
+  mensajeEvento.style.color = 'blue';
+});
+
+cuadroEvento.addEventListener('mouseout', () => {
+  mensajeEvento.textContent = 'Evento no activado.';
+  mensajeEvento.style.color = '';
+});
+
+// --- FUNCIONES ---
+const btnFuncion = document.querySelector('#btnFuncion');
+const nombreInput = document.querySelector('#nombreInput');
+
+function saludar(nombre) {
+  alert(`¡Hola, ${nombre}! Esta es una función en acción.`);
 }
 
-function mostrarSaludo() {
-  const nombre = nombreInput.value;
-  if (nombre.trim() === "") {
-    saludo.textContent = "Por favor, escribe tu nombre.";
+btnFuncion.addEventListener('click', () => {
+  const nombre = nombreInput.value.trim();
+  if (nombre) {
+    saludar(nombre);
   } else {
-    saludo.textContent = `¡Hola, ${nombre}!`;
+    alert('Por favor, escribe tu nombre.');
   }
-}
+});

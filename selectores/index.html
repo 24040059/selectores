@@ -3,23 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página con JavaScript</title>
+  <title>Ejemplo: Selectores, Eventos y Funciones en JavaScript</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <h1 id="titulo">¡Hola, bienvenido a mi página web!</h1>
-  
-  <p>Presiona el botón para cambiar el color del texto:</p>
-  
-  <button id="botonColor">Cambiar color</button>
-
-  <p>Escribe tu nombre:</p>
-  <input type="text" id="nombreInput" placeholder="Tu nombre">
-  <button id="botonSaludo">Saludar</button>
-
-  <h2 id="saludo"></h2>
-
+  <header>
+    <h1>Ejemplo de Selectores, Eventos y Funciones</h1>
+    <p>Interactúa con los cuadros para ver cómo funcionan en JavaScript.</p>
+  </header>
+  <main class="contenedor">
+    <section class="tarjeta" id="cuadro-selectores">
+      <h2>Selectores</h2>
+      <p>Haz clic en el botón para cambiar el color y texto usando un selector.</p>
+      <button id="btnSelector">Cambiar texto y color</button>
+      <p id="textoSelector">Texto original de selectores.</p>
+    </section>
+    <section class="tarjeta" id="cuadro-eventos">
+      <h2>Eventos</h2>
+      <p>Pasa el mouse sobre el cuadro o haz clic en el botón para ver eventos.</p>
+      <button id="btnEvento">Mostrar evento</button>
+      <p id="mensajeEvento">Evento no activado.</p>
+    </section>
+    <section class="tarjeta" id="cuadro-funciones">
+      <h2>Funciones</h2>
+      <p>Escribe tu nombre y haz clic en el botón para ejecutar una función.</p>
+      <input type="text" id="nombreInput" placeholder="Escribe tu nombre">
+      <button id="btnFuncion">Saludar</button>
+    </section>
+  </main>
+  <footer>
+    <p>Hecho con ❤️ usando JavaScript</p>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
